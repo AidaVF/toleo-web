@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route ,Link, Routes} from "react-router-dom";
+
+import Success from "./Success"; 
+import Success2 from "./SuccessInvoice"; 
+import Cancel from "./Cancel"; 
+import Error from "./Error";
+import Impressum from "./Impressum";
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Router>
+      <Routes> 
+          <Route path="/success" element={<Success />} /> 
+          <Route path="/successinvoice" element={<Success2 />} />
+          <Route path="/cancel" element={<Cancel />} /> 
+          <Route path="/error" element={<Error />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/" element={<App />} />
+      </Routes> 
+    </Router>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
